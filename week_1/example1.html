@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Basic JavaScript</title>
+	<script type="text/javascript">
+		var myName = "Brent";
+		var sentence = "Jane said, \"there once was a happy dog.\"";
+		var isHappy = false;
+		var numStudents;
+		var numChairs;
+		var numAvailableChairs;
+		//Get the data as stringsß
+		numChairs = prompt("How many chairs are in the room?");
+		numStudents = prompt("How many students are enrolled in the class?");
+		//Force numChairs and numStudents to be numbers, not strings
+		numChairs = Number(numChairs);
+		numStudents = Number(numStudents);
+		//run the calculation
+		numAvailableChairs = numChairs - numStudents;
+		//output the result.
+		alert("There are " + numAvailableChairs + " chairs left.");
+		/*if(isHappy)
+		{
+			alert(sentence);
+		}*/
+	</script>
+</head>
+
+<body>
+	<div>
+		<p>This is my web page</p>
+	</div>
+
+</body>
+</html>
