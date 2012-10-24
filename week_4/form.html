@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Form</title>
+	<style>
+		label{
+			display: block;
+			margin-top: 12px;
+		}
+		h3{
+			margin-bottom: 18px;
+		}
+		#submission, #loading{
+			display: none;
+		}
+	</style>
+	<link rel="stylesheet" href="js/formcheck/theme/green/formcheck.css" type="text/css" media="screen" />
+	<script src="http://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+	<script src="js/moomore.js"></script>
+	<script type="text/javascript" src="js/formcheck/lang/en.js"> </script>
+	<script type="text/javascript" src="js/formcheck/formcheck.js"> </script>
+	<script>
+		function showResults()
+		{
+
+			document.id("loading").dissolve();
+			document.id("submission").reveal();
+		}
+
+		document.addEvent("domready", function(){
+			new FormCheck("myform", {
+				submitByAjax: true,
+				ajaxResponseDiv: "submission",
+				display: {showErrors: 1},
+				onAjaxRequest: function(){
+					document.id("myform").dissolve();
+					document.id("loading").reveal();
+				},
+				onAjaxSuccess: function(){
+					showResults.delay(2000);
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<h3>Fill out the form!</h3>
+	<form id="myform" action="process.php" method="post">
+		<label>
+		First Name: <input class="validate['required','length[2,-1]']" type="text" name="fname" placeholder="First Name" /></label>
+		<label>
+		Last Name: <input class="validate['required','length[2,-1]']" type="text" name="lname" placeholder="Last Name" /></label>
+		<label>
+		Phone: <input class="validate['required','phone','length[10,-1]']" type="text" name="phone" placeholder="(999) 999-9999" /></label>
+		Won't you be my friend?
+		<label>Yes <input type="radio" name="friend" value="yes" /></label>
+		<label>No <input type="radio" name="friend" value="no" /></label>
+		Select some flavors
+		<label>
+			Chocolate <input type="checkbox" name="flavors[]" value="chocolate" />
+		</label>
+		<label>
+			Strawberry <input type="checkbox" name="flavors[]" value="strawberry" />
+		</label>
+		<label>
+			Chicken <input type="checkbox" name="flavors[]" value="chicken" />
+		</label>
+		<input type="submit" />
+	</form>
+	<div id="loading">Wait a sec! We're thinkin' about it!</div>
+	<div id="submission"></div>
+</body>
+</html>
+
+
+
+
+
