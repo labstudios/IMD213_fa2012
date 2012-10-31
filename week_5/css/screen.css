@@ -1,0 +1,15 @@
+
+#nav{
+	text-align: center;
+}
+
+#nav a{
+	color: #009999;
+	margin-left: 5em;
+	font-size: 18px;
+	text-decoration: none;
+}
+
+#nav a:hover{
+	text-decoration: underline;
+}
