@@ -1,0 +1,23 @@
+<html>
+<head>
+	<title>Class Sample</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+	<script src="js/animal.js"></script>
+	<script>
+	document.addEvent("domready", function(){
+		var animal = new Animal("animal1", {sound:"bark"});
+		var animal2 = new Animal("animal2", {name:"Timmy", sound:"quack"});
+		animal.speak();
+		animal2.speak();
+		animal.speak();
+		animal2.speak();
+	});
+	</script>
+
+</head>
+<body>
+	<pre id="animal1"></pre>
+	<pre id="animal2"></pre>
+
+</body>
+</html>
