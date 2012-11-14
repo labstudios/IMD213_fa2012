@@ -1,0 +1,74 @@
+<html>
+<head>
+	<title>The Extra Credit</title>
+	<script src="http://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+	<script type="text/javascript" src="js/phraser.js"></script>
+	<script type="text/javascript">
+		document.addEvent("domready", function(){
+			var it1 = new Phraser("item1"); //creates instance of the class
+			new Phraser("item2", {phrase:"This is the second."});
+			new Phraser("item3", {phrase:"I'm done!!!"});
+
+			new Phraser("item4",{
+				phrase: "yippee!",
+				boxSelector: "span",
+				boxAttribute: "html",
+				buttonSelector: ".button"
+
+			});
+
+			var bloody = new Phraser("item5", {
+				phrase: "Oh, you got me!",
+				buttonSelector: "input"
+			});
+
+			it1.addEvent("click", function(){
+				document.getElement("body").setStyle("background-color", "#885673");
+			});
+			bloody.addEvent("click", function(){
+				document.getElement("body").setStyle("background-color", "#aa0000");
+			});
+		});
+	</script>
+	<style type="text/css">
+		input[type='text']{
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+<div id="item1">
+	<input type="text" />
+	<button>Go</button>
+</div>
+<div id="item2">
+	<input type="text" />
+	<button>Go</button>
+</div>
+<div id="item3">
+	<input type="text" />
+	<button>Go</button>
+</div>
+
+<div id="item4">
+	<span></span>
+	<p class="button">Click me!</p>
+</div>
+
+<div id="item5">
+	<input type="text" />
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
