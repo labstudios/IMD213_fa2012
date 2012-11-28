@@ -1,0 +1,32 @@
+<html>
+<head>
+	<title>Slider Module</title>
+	<link rel="stylesheet" href="css/slider.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js"></script>
+	<script src="js/slider.js"></script>
+	<script>
+		document.addEvent("domready", function(){
+			new Slider("slider1");
+		});
+	</script>
+</head>
+<body>
+
+	<div id="slider1" class="slider">
+		<div class="left-btn">&lt;</div>
+		<div class="right-btn">&gt;</div>
+		<div class="window">
+			<ul>
+				<li>Content 1</li>
+				<li>Content 2</li>
+				<li>Content 3</li>
+				<li>Content 4</li>
+				<li>Content 5</li>
+				<li>Content 6</li>
+				<li>Content 7</li>
+				<li>Content 8</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
